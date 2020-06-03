@@ -1,0 +1,14 @@
+import { decodeJwtToken } from "../security-helper";
+
+const token =
+  "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI5MTUyNjdmMC01OTM5LTAyMzAtNzhlNy1iOGNkYmFhYjg1MTgiLCJqdGkiOiJua0NuWUp3WlpWalZ2SV9fVThBWmJEVE0zWC1hMHk0ckRHa24tVXNRIiwic2NvcGUiOlsidWluZmluIiwibmFtZSIsInNleCIsInJhY2UiLCJuYXRpb25hbGl0eSIsImRvYiIsImVtYWlsIiwibW9iaWxlbm8iLCJyZWdhZGQiLCJob3VzaW5ndHlwZSIsImhkYnR5cGUiLCJtYXJpdGFsIiwiZWR1bGV2ZWwiLCJub2EtYmFzaWMiLCJvd25lcnByaXZhdGUiLCJjcGZjb250cmlidXRpb25zIiwiY3BmYmFsYW5jZXMiXSwidG9rZW5OYW1lIjoiYWNjZXNzX3Rva2VuIiwidG9rZW5fdHlwZSI6IkJlYXJlciIsImdyYW50X3R5cGUiOiJhdXRob3JpemF0aW9uX2NvZGUiLCJleHBpcmVzX2luIjoxODAwLCJhdWQiOiJTVEcyLU1ZSU5GTy1TRUxGLVRFU1QiLCJyZWFsbSI6Im15aW5mby1jb20iLCJpc3MiOiJodHRwczovL3Rlc3QuYXBpLm15aW5mby5nb3Yuc2cvc2VydmljZWF1dGgvbXlpbmZvLWNvbSIsImlhdCI6MTU4MzkzODMzMiwibmJmIjoxNTgzOTM4MzMyLCJleHAiOjE1ODM5NDAxMzJ9.DvmE5jSNDKfARZyI5yZ0SlUPH1zQVnigsT6uhXnOZILOA1htkpkBWH21mdLnsWmZ3QeHXgX1jqUkq2uda1YimQUsOwSCXWmWGNrHbzM2gl50F4dH2rBKTB5xU0_Qla6PaV-dQJfIXw9ksn8cPvSVqbDSqO8hlbprieIEob6dngQW_RHwSSWPdpuWzSfZgQ2xEQpYAUljN7w0zLGYdDb8YoHqojpkyEjXpPIiiMSXYxE_Pmckk6rEdHad_r3GbAgIXCviT1bMMzKcGTjJIHBvofcxfcK-Y94VClwx4I56Sc541y3k6O18PEvrGmKtWWF8Axy1yoVtZSQVLEFZmm3T_A";
+
+describe("decodeJwtToken", function() {
+  describe("when valid jwt token is given", function() {
+    it("returns decoded token", function() {
+      const decoded = decodeJwtToken(token);
+      // console.log(decoded);
+      expect(decoded).toHaveProperty("sub");
+    });
+  });
+});
